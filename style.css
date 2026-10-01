@@ -1,0 +1,600 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f7fb;
+    color: #173047;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 64px;
+    width: 100%;
+
+    background: rgba(7, 34, 55, 0.96);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-family: "Caveat", cursive;
+    font-size: 22px;
+}
+
+.mountain {
+    font-size: 24px;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6ec8ff;
+}
+
+
+.private-btn {
+    color: white;
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    padding: 9px 17px;
+
+    border-radius: 25px;
+
+    font-size: 12px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    height: 480px;
+
+    margin-top: 64px;
+
+    position: relative;
+
+    background-image:
+        url("images/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            rgba(5, 37, 60, 0.40),
+            rgba(5, 37, 60, 0.25)
+        );
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    margin-top: 10px;
+}
+
+
+.hero h1 {
+    font-family: "Caveat", cursive;
+
+    font-size: 55px;
+
+    font-weight: 500;
+
+    margin-bottom: 5px;
+}
+
+
+.subtitle {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    font-family: "Caveat", cursive;
+
+    font-size: 27px;
+}
+
+.subtitle span {
+    width: 65px;
+    height: 2px;
+
+    background: white;
+}
+
+
+.memories {
+    margin-top: 18px;
+
+    font-size: 13px;
+}
+
+
+.upload-button {
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 13px 28px;
+
+    background: #138de2;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.upload-button:hover {
+    background: #0876c2;
+
+    transform: translateY(-2px);
+}
+
+
+.small-text {
+    font-size: 12px;
+
+    margin-top: 10px;
+}
+
+
+.trip-info {
+    position: absolute;
+
+    bottom: 25px;
+    left: 5%;
+
+    z-index: 3;
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: center;
+
+    font-size: 12px;
+}
+
+.trip-info .line {
+    width: 1px;
+    height: 20px;
+    background: white;
+}
+
+
+/* ================= GALLERY ================= */
+
+.gallery-section {
+    padding: 35px 4% 60px;
+}
+
+
+.section-title {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+}
+
+
+.section-title h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 38px;
+
+    font-weight: 600;
+
+    color: #21465d;
+}
+
+
+.title-line {
+    width: 40px;
+    height: 2px;
+
+    background: #21465d;
+}
+
+
+.gallery-subtitle {
+    text-align: center;
+
+    color: #687a87;
+
+    font-size: 13px;
+
+    margin-top: -5px;
+}
+
+
+/* ================= FILTERS ================= */
+
+.filters {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    margin: 20px 0;
+}
+
+
+.filter {
+    border: 1px solid #d9e2e8;
+
+    background: white;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    color: #49606e;
+}
+
+
+.filter.active,
+.filter:hover {
+    background: #123b54;
+
+    color: white;
+
+    border-color: #123b54;
+}
+
+
+/* ================= GALLERY CONTAINER ================= */
+
+.gallery-container {
+    display: grid;
+
+    grid-template-columns: 3fr 1fr;
+
+    gap: 25px;
+
+    max-width: 1400px;
+
+    margin: auto;
+}
+
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+
+.gallery-item {
+    height: 155px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background: #ddd;
+
+    cursor: pointer;
+}
+
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+.image-label {
+    position: absolute;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 9px;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background:
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,0.8)
+        );
+
+    font-size: 12px;
+}
+
+
+/* ================= UPLOAD CARD ================= */
+
+.upload-card {
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 35px 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 3px 15px rgba(0,0,0,0.06);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.upload-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    background: #e5f4ff;
+
+    color: #148ee0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    margin-bottom: 15px;
+}
+
+
+.upload-card h3 {
+    font-size: 15px;
+
+    margin-bottom: 10px;
+}
+
+
+.upload-card p {
+    color: #687a87;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    max-width: 230px;
+}
+
+
+.upload-now {
+    margin-top: 15px;
+
+    background: #138de2;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 12px 25px;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* ================= ABOUT ================= */
+
+.about {
+    background: #123b54;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 50px 20px;
+}
+
+
+.about h2 {
+    font-family: "Caveat", cursive;
+
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+
+.about p {
+    max-width: 650px;
+
+    margin: 8px auto;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #082b40;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    font-size: 12px;
+
+    line-height: 2;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 4%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .private-btn {
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .subtitle span {
+        width: 35px;
+    }
+
+    .trip-info {
+        left: 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+
+    .trip-info .line {
+        display: none;
+    }
+
+    .filters {
+        flex-wrap: wrap;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
